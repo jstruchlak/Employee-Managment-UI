@@ -1,4 +1,4 @@
-export const environments = {
+export const environment = {
     isProduction: false,
     apiUrl: 'https://localhost:7201/api',
 }
