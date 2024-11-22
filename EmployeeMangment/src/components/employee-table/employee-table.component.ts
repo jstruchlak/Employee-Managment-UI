@@ -1,23 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../../models/employee';
 import { EmployeeService } from '../../services/employee.service';
+import { CommonModule } from '@angular/common';
+
 
 @Component({
-  selector: 'app-employee-table',
+  selector: 'employee-table',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './employee-table.component.html',
   styleUrl: './employee-table.component.css'
 })
 export class EmployeeTableComponent {
 
-  employee: Employee[] = [];
+  employees: Employee[] = [];
 
   constructor(private employeeService: EmployeeService){}
 
-  ngOnInit() {
+  ngOnInit(){
     this.employeeService.getEmployees().subscribe((data: Employee[]) => {
-      this.employee = data;
+      this.employees = data;
       console.log(data);
     });
   }
