@@ -12,3 +12,4 @@ import { EmployeeTableComponent } from '../components/employee-table/employee-ta
 export class AppComponent {
   title = 'EmployeeMangment';
 }
+
